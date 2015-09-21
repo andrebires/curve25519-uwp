@@ -12,9 +12,9 @@
 						C++ WinRT component. You can still build amazing apps. Just change the setting at the top of Visual Studio." />
 	</Target>
 
-	<!-- Reference curve25519, and select the appropriate implementation according to the platform targeted -->
+	<!-- Reference curve25519.winmd, and then select the appropriate implementation according to the platform targeted -->
 	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-		<Reference Include="$(MSBuildThisFileDirectory)..\..\..\runtimes\win10-$(curve25519-Platform)\native\curve25519.winmd">
+		<Reference Include="$(MSBuildThisFileDirectory)..\..\..\lib\uap10.0\curve25519.winmd">
 			<Implementation>curve25519.dll</Implementation>
 		</Reference>
 		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\..\runtimes\win10-$(curve25519-Platform)\native\curve25519.dll" />

@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>curve25519-uwp</id>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<title>curve25519-uwp</title>
 		<authors>langboost</authors>
 		<owners>langboost</owners>
@@ -18,17 +18,20 @@
 	<files>
 		<!-- Visual Studio project target modifications -->
 		<file src="..\staging\build\uap\native\curve25519.targets" target="build\uap\native" />
-		<!-- WinMD to lib folder (this is what seems to trigger NuGet automatically adding a reference, and paying attention to our targets file) -->
-		<file src="..\staging\runtimes\win10-x86\native\*.winmd" target="lib\uap10.0" /> 
+		<!-- WinMD to lib folder (this is what seems to trigger NuGet automatically adding a reference, and paying attention to our targets file) storing x86 version, although each one is slightly different, they are supposed to be platform-agnostic... -->
+		<file src="..\staging\runtimes\win10-x86\native\*.winmd" target="lib\uap10.0" />
 
 		<!-- C++ headers -->
 		<file src="..\staging\include\*.h" target="include" />
 
-		<!-- x86 runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-x86\native\*.*" target="runtimes\win10-x86\native" />
-		<!-- x64 runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-x64\native\*.*" target="runtimes\win10-x64\native" />
-		<!-- ARM runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-arm\native\*.*" target="runtimes\win10-arm\native" />
+		<!-- x86 runtime DLL, PRI -->
+		<file src="..\staging\runtimes\win10-x86\native\*.dll" target="runtimes\win10-x86\native" />
+		<file src="..\staging\runtimes\win10-x86\native\*.pri" target="runtimes\win10-x86\native" />
+		<!-- x64 runtime DLL, PRI -->
+		<file src="..\staging\runtimes\win10-x64\native\*.dll" target="runtimes\win10-x64\native" />
+		<file src="..\staging\runtimes\win10-x64\native\*.pri" target="runtimes\win10-x64\native" />
+		<!-- ARM runtime DLL, PRI -->
+		<file src="..\staging\runtimes\win10-arm\native\*.dll" target="runtimes\win10-arm\native" />
+		<file src="..\staging\runtimes\win10-arm\native\*.pri" target="runtimes\win10-arm\native" />
 	</files>
 </package>
