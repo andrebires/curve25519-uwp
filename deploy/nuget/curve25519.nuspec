@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>curve25519-uwp</id>
-		<version>1.0.1</version>
+		<version>1.0.3</version>
 		<title>curve25519-uwp</title>
 		<authors>langboost</authors>
 		<owners>langboost</owners>
@@ -11,7 +11,7 @@
 		<iconUrl>https://raw.githubusercontent.com/langboost/curve25519-uwp/master/NuGetIcon.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Curve25519, implemented as a C++ Windows Runtime Component, consumable in UWP.</description>
-		<releaseNotes>Trying to fix an error where the implementation DLL cannot be found whenever referencing the project via NuGet in a C# unit test project.</releaseNotes>
+		<releaseNotes>1.0.2 was broken.</releaseNotes>
 		<copyright>Copyright 2015</copyright>
 		<tags>uwp curve25519 dotnet</tags>
 	</metadata>
