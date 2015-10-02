@@ -17,18 +17,18 @@
 	</metadata>
 	<files>
 		<!-- Visual Studio project target modifications -->
-		<file src="..\staging\build\uap\native\curve25519.targets" target="build\uap\native" />
-		<!-- WinMD to lib folder (this is what seems to trigger NuGet automatically adding a reference, and paying attention to our targets file) -->
-		<file src="..\staging\runtimes\win10-x86\native\*.winmd" target="lib\uap10.0" /> 
+		<file src="..\staging\build\uap10.0\curve25519-uwp.targets" target="build\uap10.0" />
+		<!-- WinMD to lib folder (NuGet sees as a ref implementation. Looks for specific arch in runtimes.)-->
+		<file src="..\staging\lib\uap10.0\*.winmd" target="lib\uap10.0" />
 
 		<!-- C++ headers -->
 		<file src="..\staging\include\*.h" target="include" />
 
 		<!-- x86 runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-x86\native\*.*" target="runtimes\win10-x86\native" />
+		<file src="..\staging\runtimes\win10-x86\lib\uap10.0\*.*" target="runtimes\win10-x86\lib\uap10.0" />
 		<!-- x64 runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-x64\native\*.*" target="runtimes\win10-x64\native" />
+		<file src="..\staging\runtimes\win10-x64\lib\uap10.0\*.*" target="runtimes\win10-x64\lib\uap10.0" />
 		<!-- ARM runtime DLL, PRI, and WinMD -->
-		<file src="..\staging\runtimes\win10-arm\native\*.*" target="runtimes\win10-arm\native" />
+		<file src="..\staging\runtimes\win10-arm\lib\uap10.0\*.*" target="runtimes\win10-arm\lib\uap10.0" />
 	</files>
 </package>
